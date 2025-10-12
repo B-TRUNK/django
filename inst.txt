@@ -1,0 +1,29 @@
+#migrate to server
+python3 manage.py migrate
+
+
+================================================================================
+To start an app and a view:
+===========================
+#to start any app inside the project (eg. home/contact/about/pages!)
+1 - python3 manage.py startapp pages
+2 - head to settings.py -> undet INSTALLED_APPS -> 'pages.apps.PagesConfig',
+3 - head to urls.py, add : from django.urls import path, include,
+4 - in same file under urlpatterns add : path('mypages/' ,include('pages.urls')),
+5 - goto apps folder created and create a new file calle urls.py.
+
+#you will not be able to navigate to the new url unless you set a view
+1 - goto pages -> views -> from django.http import HttpResponse
+2 - add a function to a new view with HttpResponse (def index(request):
+    return HttpResponse('Hello, Visitor'))
+3 - add this new function to the urls under pages app
+4 - add this to pages/urls.py :
+    from django.urls import path
+    from . import views
+
+    urlpatterns = [
+
+        path('' ,views.index ,name='index')
+
+    ]
+=====================================================================================
