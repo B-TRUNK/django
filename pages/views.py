@@ -6,3 +6,9 @@ from django.http import HttpResponse
 
 def index(request):
     return HttpResponse('Hello, Visitor')
+
+def about(request):
+    return HttpResponse('We Are, ...')
+
+def contact_us(request):
+    return HttpResponse('Call Us!')
