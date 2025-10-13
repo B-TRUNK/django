@@ -2,7 +2,7 @@
 python3 manage.py migrate
 
 
-================================================================================
+====================================================================================
 To start an app and a view:
 ===========================
 #to start any app inside the project (eg. home/contact/about/pages!)
@@ -26,4 +26,15 @@ To start an app and a view:
         path('' ,views.index ,name='index')
 
     ]
-=====================================================================================
+====================================================================================
+
+#Working with templates
+=======================
+
+1 - create a folder named 'templates' on project root folder.
+2 - head to settings.py and import os
+3 - in settings.py under TEMPLATES ,inside 'DIRS'[] add : os.path.join(BASE_DIR, 'templates')
+4 - create a template for your vies functions
+5 - modify yout views to call the render function instead of HttpResponse
+
+====================================================================================
