@@ -3,12 +3,16 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+person = {
+    'name' : 'Ali',
+    'age'  : 34,
+}
 
 def index(request):
     return render(request ,'pages/index.html')
 
 def about(request):
-    return HttpResponse('We Are, ...')
+    return render(request ,'pages/about.html' ,person)
 
 def contact_us(request):
     return HttpResponse('Call Us!')
