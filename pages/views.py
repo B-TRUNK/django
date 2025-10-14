@@ -4,8 +4,8 @@ from django.http import HttpResponse
 # Create your views here.
 
 person = {
-    'name' : 'Ali',
-    'age'  : 34,
+    'file' : '',
+    'size'  : 1321415135,
 }
 
 def index(request):
