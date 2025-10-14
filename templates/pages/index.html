@@ -1,1 +1,16 @@
-this is index render page
+{% extends "base.html" %} <!-- inheritence -->
+
+{% block content %}
+
+{% if file == 'winrar' %}
+    <h3>Index Content</h3>
+
+{% elif file == 'winzip' %}
+    <h3>Index Content is Hidden2</h3>
+
+{% else %}
+    <h3>Index Content is Hidden</h3>
+
+{% endif %}
+
+{% endblock content %}

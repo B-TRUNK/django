@@ -1,2 +1,13 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
 <h4>{{file|capfirst|default:'not a name'|slice:':3'|add:' found'|cut:' '}}</h4>
 <h4>{{size|filesizeformat}}</h4>
+
+{% for i in file %}
+    <p>{{ i }}</p>
+{% endfor %}
+
+{% endblock content %}

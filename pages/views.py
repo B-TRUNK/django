@@ -4,7 +4,7 @@ from django.http import HttpResponse
 # Create your views here.
 
 person = {
-    'file' : '',
+    'file' : 'winrar',
     'size'  : 1321415135,
 }
 
