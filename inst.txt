@@ -38,3 +38,16 @@ To start an app and a view:
 5 - modify yout views to call the render function instead of HttpResponse
 
 ====================================================================================
+
+#Working with static files
+==========================
+
+1 - goto main project folder (contains settings) and create a folder named 'static'
+2 - config under STATIC in settings.py :
+STATIC_ROOT = os.path.join(BASE_DIR ,'static')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR ,'bsq/static'),
+    ]
+3 - run python3 manage.py collectstatic ,now a folder called static
+should be shown in project root
+4 - use it in your html pages

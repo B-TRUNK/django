@@ -1,5 +1,7 @@
 {% extends "base.html" %} <!-- inheritence -->
 
+{% load static %}
+
 {% block content %}
 
 {% if file == 'winrar' %}
@@ -12,5 +14,7 @@
     <h3>Index Content is Hidden</h3>
 
 {% endif %}
+
+<img src="{% static 'imgs/django.jpg' %}" alt="">
 
 {% endblock content %}
