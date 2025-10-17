@@ -22,4 +22,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('mypages/' ,include('pages.urls')),
     path('lockers/' ,include('lockers.urls')),
+    path('emp/' ,include('employment.urls')),
 ]

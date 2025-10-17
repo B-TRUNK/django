@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     #added by me
     'pages.apps.PagesConfig',
     'lockers.apps.LockersConfig',
+    'employment.apps.EmploymentConfig',
 ]
 
 MIDDLEWARE = [
