@@ -51,3 +51,12 @@ STATICFILES_DIRS = [
 3 - run python3 manage.py collectstatic ,now a folder called static
 should be shown in project root
 4 - use it in your html pages
+
+#admin_panel
+============
+
+1 - create user/pass :
+    python3 manage.py createsuperuser
+    under product/admin , import .model product
+    python3 manage.py makemigrations
+    python3 manage.py migrate
