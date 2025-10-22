@@ -66,3 +66,14 @@ should be shown in project root
 1 - include your model in view.render as a context: ,{'pro' :Product.objects.all()}
 2 - call the 'pro' key in your template and access your table columns
 3 - use Meta Class in your model to adjust table view name /ordering on admin_panel
+
+#===================================================================================
+#Working with Database Relationships
+====================================
+
+1 - One to One
+    (ex: a marriage website ,each male searches for one female, and each female for only male)
+2 - One to Many
+    (ex: each user has many posts)
+3 - Many to Many
+
