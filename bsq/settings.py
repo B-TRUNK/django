@@ -81,10 +81,15 @@ WSGI_APPLICATION = 'bsq.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'bsq',               # the name you created in pgAdmin
+        'USER': 'postgres',          # your PostgreSQL user
+        'PASSWORD': 'as@8675',       # the password you set
+        'HOST': 'localhost',
+        'PORT': '5432',              # default PostgreSQL port
     }
 }
+
 
 
 # Password validation
