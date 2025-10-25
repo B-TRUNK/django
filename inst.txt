@@ -96,4 +96,21 @@ should be shown in project root
 2 - One to Many
     (ex: each user has many posts)
 3 - Many to Many
+====================================================================================
 
+#Working with media:
+====================
+1 - goto settings.py -> head to -> end of file & add:
+    MEDIA_ROOT = os.path.join(BASE_DIR ,'media')
+    MEDIA_URL = '/media'
+
+2 - goto urls file under setiings file
+    from django.conf import settings
+    from django.conf.urls.static import static
+    + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT) to athe urlpatterns array
+3 - in your product views :
+    <img src="{{ product.image.url }}" alt="">
+
+then you will find a media folder created under products after creating a new product
+
+=====================================================================================
