@@ -10,4 +10,16 @@
     <p>{{ i }}</p>
 {% endfor %}
 
+<!--Working with Forms-->
+<form method="POST">
+  {% csrf_token %}
+  <input type="text" name="username" id="" placeholder="username">
+  <br>
+
+  <input type="password" name="password" id=""  placeholder="password">
+  <br>
+
+  <input type="submit" id="" value="save">
+</form>
+
 {% endblock content %}

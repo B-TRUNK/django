@@ -114,3 +114,29 @@ should be shown in project root
 then you will find a media folder created under products after creating a new product
 
 =====================================================================================
+
+#Working with Forms
+===================
+@first_method - making forms in templates
+    1 - create a template forms
+    2 - a model to store input data through the forem
+    3 - activate through views
+    
+    1 - create your form then : {% csrf_token %}
+    2 - in models.py :
+        class Login(models.Model):
+            username = models.CharField(max_length=50, null=False, blank=False)
+            password = models.CharField(max_length=50, null=False, blank=False)
+    3 - in views.py:
+        def about(request):
+
+            if request.method == 'POST':
+                username = request.POST.get('username')
+                password = request.POST.get('password')
+                form_data = Login(username=username, password=password)
+                form_data.save()
+
+        return render(request ,'pages/about.html' ,person)
+    
+    4- in Admin.py : admin.site.register(Login)
+====================================================================================
