@@ -139,4 +139,23 @@ then you will find a media folder created under products after creating a new pr
         return render(request ,'pages/about.html' ,person)
     
     4- in Admin.py : admin.site.register(Login)
+
+@second_method(django forms)
+    1 - goto pages app and create forms.py
+        from django import forms
+
+        class LoginForm(forms.Form):
+            username = forms.CharField(max_length=50)
+            password = forms.CharField(max_length=50)   
+
+    2 - goto views.py
+        from .forms import *
+        ,pass a context:
+            {'logform' : LoginForm}
+
+    3 - in about.html :
+        {{ logform }} --> inside old from from @method_one
+
+
+
 ====================================================================================

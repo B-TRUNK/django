@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Login
+from .forms import *
 
 # Create your views here.
 
@@ -20,7 +21,7 @@ def about(request):
         form_data = Login(username=username, password=password)
         form_data.save()
 
-    return render(request ,'pages/about.html' ,person)
+    return render(request ,'pages/about.html' ,{'logform' : LoginForm ,'person' : person})
 
 def contact_us(request):
     return HttpResponse('Call Us!')

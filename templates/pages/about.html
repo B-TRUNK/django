@@ -3,21 +3,26 @@
 
 {% block content %}
 
-<h4>{{file|capfirst|default:'not a name'|slice:':3'|add:' found'|cut:' '}}</h4>
-<h4>{{size|filesizeformat}}</h4>
+<h4>{{person.file|capfirst|default:'not a name'|slice:':3'|add:' found'|cut:' '}}</h4>
+<h4>{{person.size|filesizeformat}}</h4>
 
-{% for i in file %}
+{% for i in person.file %}
     <p>{{ i }}</p>
 {% endfor %}
 
 <!--Working with Forms-->
 <form method="POST">
   {% csrf_token %}
+
+  <!--replace with python forms
   <input type="text" name="username" id="" placeholder="username">
   <br>
 
   <input type="password" name="password" id=""  placeholder="password">
   <br>
+  -->
+
+  {{ logform }}
 
   <input type="submit" id="" value="save">
 </form>
