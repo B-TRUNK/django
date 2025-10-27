@@ -156,6 +156,25 @@ then you will find a media folder created under products after creating a new pr
     3 - in about.html :
         {{ logform }} --> inside old from from @method_one
 
+@third_method
+    1 - in forms.py
+        from .models import *
+
+        class Meta:
+        model = Login
+        #get all fields
+        fields = '__all__'
+        #get a specific field
+        #fields = ['password', 'password']
+
+    2 - in views.py
+        if request.method == 'POST':
+        form_data = LoginForm(request.POST)
+        if form_data.is_valid():        # <-- REQUIRED!
+            form_data.save()
+        else:
+            print(form_data.errors)     # debug errors
+
 
 
 ====================================================================================

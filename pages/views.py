@@ -15,11 +15,22 @@ def index(request):
 
 def about(request):
 
+    """
     if request.method == 'POST':
         username = request.POST.get('username')
         password = request.POST.get('password')
         form_data = Login(username=username, password=password)
         form_data.save()
+    """
+
+    #@third_method
+    if request.method == 'POST':
+        form_data = LoginForm(request.POST)
+        if form_data.is_valid():        # <-- REQUIRED!
+            form_data.save()
+        else:
+            print(form_data.errors)     # debug errors
+            
 
     return render(request ,'pages/about.html' ,{'logform' : LoginForm ,'person' : person})
 
