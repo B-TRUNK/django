@@ -22,6 +22,7 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('grappelli/' ,include('grappelli.urls')),
     path('admin/', admin.site.urls),
     path('mypages/' ,include('pages.urls')),
     path('lockers/' ,include('lockers.urls')),

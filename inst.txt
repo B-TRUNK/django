@@ -178,3 +178,31 @@ then you will find a media folder created under products after creating a new pr
 
 
 ====================================================================================
+
+#django themes : grappelli
+==========================
+1 - pip3 install django-grappelli
+2 - in settings.py -> under INSTALLED_APPS : 'grappelli',
+3 - in urls.py -> under patterns -> path('grappelli/' ,include('grappelli.urls')),
+
+====================================================================================
+
+#admin panel customization:
+===========================
+
+in models.py for any of your apps:
+    class ProductAdmin(admin.ModelAdmin):
+        
+        list_display = ['name', 'price', 'active']
+        list_display_links = ['price']
+        #note editables should not be in links
+        list_editable   = ['name', 'active']
+        #search bar
+        search_fields = ['name', 'price']
+        #filtering
+        list_filter = ['category', 'price']
+
+# Register your models here.
+admin.site.register(Product, ProductAdmin)
+
+=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/=/

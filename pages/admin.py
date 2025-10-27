@@ -11,3 +11,7 @@ admin.site.register(Student)
 admin.site.register(Course)
 
 admin.site.register(Login)
+
+
+admin.site.site_header = 'Welcome to New Gen'
+admin.site.site_title  = 'New Gen'
